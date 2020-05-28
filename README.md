@@ -37,6 +37,7 @@ The second column is the actual data sample.
 The labels are provided in the following format based on TAB separated values:
 
 1    1
+
 2    2
 
 Each line represents a label associated to a data sample where:
