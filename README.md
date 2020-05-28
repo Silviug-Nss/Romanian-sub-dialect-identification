@@ -1,6 +1,52 @@
 # Romanian-sub-dialect-identification
 Discriminate between the Moldavian and the Romanian dialects across different text genres (news versus tweets)
 
+  This model is trained on samples collected the news domain and evaluated on tweets. Therefore, the model is built for a cross-genre binary classification by dialect task, in which a classification model is required to discriminate between the Moldavian (MD) and the Romanian (RO) dialects across different text genres (news versus tweets).
+
+  File Descriptions:
+  ------------------
+
+train_samples.txt - the training data samples (one sample per row)
+train_labels.txt - the training labels (one label per row)
+validation_source_samples.txt - the validation data samples (one sample per row) from the source genre (news articles)
+validation_source_labels.txt - the validation labels (one label per row) for the source validation samples
+validation_target_samples.txt - the validation data samples (one sample per row) from the target genre (tweets)
+validation_target_labels.txt - the validation labels (one label per row) for the target validation samples
+test_samples.txt - the test data samples (one sample per row)
+sample_submission.csv - a result file in the correct format
+
+  Data Format
+  -----------
+
+- Samples File
+
+The data samples are provided in the following format based on TAB separated values:
+
+1    Premierul îi ia apărarea ministrului $NE$ ”Nu e în conflict de interese” $NE$
+2    Preşedintele ÎCCJ, $NE$ $NE$ $NE$ pensiilor $NE$ este tristă şi stupefiantă $NE$
+
+Each line represents a data sample where:
+
+The first column shows the ID of the data sample.
+The second column is the actual data sample.
+"$NE$" means that there was a name and was removed in this way.
+
+  Labels File
+  -----------
+
+The labels are provided in the following format based on TAB separated values:
+
+1    1
+2    2
+
+Each line represents a label associated to a data sample where:
+
+The first column shows the ID of the data sample.
+The second column is the actual label.
+
+  Implementation
+  --------------
+
   This program implements a RNN using one Embedding layer and 2 stacked
 Bidirectional LSTM, ending with one Dense layer in order to get the prediction.
 
